@@ -16,7 +16,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-slate-950 text-white">
+    <html
+      lang="en"
+      className="bg-gradient-to-r from-slate-950 to-blue-950 text-white"
+      style={{
+        backgroundImage:
+          "url(https://w.wallhaven.cc/full/rd/wallhaven-rd2o7j.jpg)",
+      }}
+    >
       <body className={inter.className}>
         <Header />
         {children}

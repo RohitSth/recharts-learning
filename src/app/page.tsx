@@ -1,27 +1,22 @@
 import AreaChart from "./components/AreaChart";
 import BarChart from "./components/BarChart";
 import LineChart from "./components/LineChart";
-import PieChart from "./components/PieChart";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10">
       <div className="grid xl:grid-cols-3 lg:grid-cols-2 w-full gap-10 max-w-[1400px]">
-        <GridItem title="Area Chart">
+        <div className="h-full w-full bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25">
           <AreaChart />
-        </GridItem>
+        </div>
 
-        <GridItem title="Bar Chart">
+        <div className="h-full w-full bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25">
           <BarChart />
-        </GridItem>
+        </div>
 
-        <GridItem title="Line Chart">
+        <div className="h-full w-full bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25">
           <LineChart />
-        </GridItem>
-
-        <GridItem title="Pie Chart">
-          <PieChart />
-        </GridItem>
+        </div>
       </div>
     </main>
   );

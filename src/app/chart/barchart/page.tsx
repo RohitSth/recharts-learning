@@ -58,32 +58,36 @@ const data = [
 
 export default function BarChartPage() {
   return (
-    <div className="flex justify-center mt-10">
-      <ResponsiveContainer width={600} height={450}>
-        <BarChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="5 5" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip
-            content={<CustomTooltip active={false} payload={[]} label="" />}
-          />
-          <Legend />
+    <>
+      <div className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10">
+        <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25">
+          <ResponsiveContainer width={600} height={450}>
+            <BarChart
+              width={500}
+              height={300}
+              data={data}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 20,
+                bottom: 5,
+              }}
+            >
+              <CartesianGrid strokeDasharray="5 5" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip
+                content={<CustomTooltip active={false} payload={[]} label="" />}
+              />
+              <Legend />
 
-          <Bar dataKey="pv" fill="#2563eb" />
-          <Bar dataKey="uv" fill="#8b5cf6" />
-        </BarChart>
-      </ResponsiveContainer>
-    </div>
+              <Bar dataKey="pv" fill="#2563eb" />
+              <Bar dataKey="uv" fill="#8b5cf6" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+    </>
   );
 }
 
