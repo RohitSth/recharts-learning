@@ -77,8 +77,8 @@ export default function RadarChartPage() {
             fill="#82ca9d"
             fillOpacity={0.6}
           />
-          <Legend />
           <Tooltip />
+          <Legend />
         </RadarChart>
       </ResponsiveContainer>
     </div>
