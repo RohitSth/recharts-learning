@@ -52,26 +52,31 @@ const RADIAN = Math.PI / 180;
 export default function PieChartPage() {
   return (
     <div className="flex justify-center mt-10">
-      <PieChart width={800} height={400}>
-        <Pie
-          data={data_1}
-          // cx={200}
-          // cy={200}
-          innerRadius={0}
-          label={true}
-          // label={renderCustomizedLabel}
-          labelLine={false}
-          outerRadius={80}
-          fill="#8884d8"
-          dataKey="value"
-        >
-          {data_1.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-        <Legend />
-        <Tooltip />
-      </PieChart>
+      <ResponsiveContainer width={600} height={450}>
+        <PieChart width={800} height={400}>
+          <Pie
+            data={data_1}
+            // cx={200}
+            // cy={200}
+            innerRadius={0}
+            label={true}
+            // label={renderCustomizedLabel}
+            labelLine={false}
+            outerRadius={120}
+            fill="#8884d8"
+            dataKey="value"
+          >
+            {data_1.map((entry, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
+            ))}
+          </Pie>
+          <Legend />
+          <Tooltip />
+        </PieChart>
+      </ResponsiveContainer>
     </div>
   );
 }
