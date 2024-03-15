@@ -46,26 +46,28 @@ const salesData = [
 
 const LineChartComponent = () => {
   return (
-    <ResponsiveContainer width={350} height={250}>
-      <LineChart
-        width={400}
-        height={400}
-        data={salesData}
-        margin={{ right: 30 }}
-      >
-        <XAxis dataKey="name" />
-        <YAxis />
-        <CartesianGrid strokeDasharray="5 5" />
+    <>
+      <ResponsiveContainer width={350} height={250}>
+        <LineChart
+          width={400}
+          height={400}
+          data={salesData}
+          margin={{ right: 30 }}
+        >
+          <XAxis dataKey="name" />
+          <YAxis />
+          <CartesianGrid strokeDasharray="5 5" />
 
-        <Tooltip
-          content={<CustomTooltip active={false} payload={[]} label="" />}
-        />
-        <Legend />
+          <Tooltip
+            content={<CustomTooltip active={false} payload={[]} label="" />}
+          />
+          <Legend />
 
-        <Line type="monotone" dataKey="revenue" stroke="#3b82f6" />
-        <Line type="monotone" dataKey="profit" stroke="#8b5cf6" />
-      </LineChart>
-    </ResponsiveContainer>
+          <Line type="monotone" dataKey="revenue" stroke="#3b82f6" />
+          <Line type="monotone" dataKey="profit" stroke="#8b5cf6" />
+        </LineChart>
+      </ResponsiveContainer>
+    </>
   );
 };
 

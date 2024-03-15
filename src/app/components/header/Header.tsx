@@ -23,6 +23,15 @@ const Header = () => {
           <Link className="mr-5" href="/chart/donut">
             Donut
           </Link>
+          <Link className="mr-5" href="/chart/dotlinechart">
+            Dot Line Chart
+          </Link>
+          <Link className="mr-5" href="/chart/skills">
+            Skills
+          </Link>
+          <Link className="mr-5" href="/chart/bubblechart">
+            Bubble Chart
+          </Link>
         </nav>
       </div>
     </header>

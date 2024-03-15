@@ -53,7 +53,7 @@ const data = [
 export default function RadarChartPage() {
   return (
     <>
-      <div className="flex min-h-screen flex-col items-center justify-center px-4 md:px-8 xl:px-10">
+      <div className="flex min-h-48 flex-col items-center justify-center px-4 md:px-8 xl:px-10">
         <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25">
           <ResponsiveContainer width={600} height={450}>
             <RadarChart

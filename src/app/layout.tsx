@@ -18,10 +18,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="bg-gradient-to-r from-slate-950 to-blue-950 text-white"
+      className="bg-gradient-to-r from-slate-950 to-blue-950 text-white bg-cover"
       style={{
         backgroundImage:
-          "url(https://w.wallhaven.cc/full/rd/wallhaven-rd2o7j.jpg)",
+          "url(https://imgs.search.brave.com/K-sTq_berFo9XATHvPZOc3OyRBIEwqIR7Asv_vJFVHQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nbWFnaWMuY29t/L3Byb2R1Y3RfaW1h/Z2VzL0RhcmstYmx1/ZS1XYWxscGFwZXIu/anBn)",
       }}
     >
       <body className={inter.className}>
