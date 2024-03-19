@@ -14,26 +14,26 @@ const Header = () => {
           <Link className="mr-5 hover:text-blue-400" href="/chart/barchart">
             Bar Chart
           </Link>
-          <Link className="mr-5 hover:text-blue-400" href="/chart/piechart">
+          {/* <Link className="mr-5 hover:text-blue-400" href="/chart/piechart">
             Pie Chart
-          </Link>
+          </Link> */}
           <Link className="mr-5 hover:text-blue-400" href="/chart/radarchart">
             Radar Chart
           </Link>
           <Link className="mr-5 hover:text-blue-400" href="/chart/donut">
-            Donut
+            Donut Chart
           </Link>
-          <Link className="mr-5 hover:text-blue-400" href="/chart/dotlinechart">
+          {/* <Link className="mr-5 hover:text-blue-400" href="/chart/dotlinechart">
             Dot Line Chart
-          </Link>
+          </Link> */}
           <Link className="mr-5 hover:text-blue-400" href="/chart/skills">
-            Skills
+            Skills Chart
           </Link>
           <Link className="mr-5 hover:text-blue-400" href="/chart/bubblechart">
             Bubble Chart
           </Link>
-          <Link className="mr-5 hover:text-blue-400" href="/chart/scatterchart">
-            Scatter Chart
+          <Link className="mr-5 hover:text-blue-400" href="/chart/linechart">
+            Line Chart
           </Link>
         </nav>
       </div>
