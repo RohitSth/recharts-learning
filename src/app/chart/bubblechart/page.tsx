@@ -18,58 +18,193 @@ const data = [
   { x: 300, y: 1000, z: 50 },
 ];
 
-const data01 = [
-  { hour: "12a", index: 1, value: 170 },
-  { hour: "1a", index: 1, value: 180 },
-  { hour: "2a", index: 1, value: 150 },
-  { hour: "3a", index: 1, value: 120 },
-  { hour: "4a", index: 1, value: 200 },
-  { hour: "5a", index: 1, value: 300 },
-  { hour: "6a", index: 1, value: 400 },
-  { hour: "7a", index: 1, value: 200 },
-  { hour: "8a", index: 1, value: 100 },
-  { hour: "9a", index: 1, value: 150 },
-  { hour: "10a", index: 1, value: 160 },
-  { hour: "11a", index: 1, value: 170 },
-  { hour: "12a", index: 1, value: 180 },
-  { hour: "1p", index: 1, value: 144 },
-  { hour: "2p", index: 1, value: 166 },
-  { hour: "3p", index: 1, value: 145 },
-  { hour: "4p", index: 1, value: 150 },
-  { hour: "5p", index: 1, value: 170 },
-  { hour: "6p", index: 1, value: 180 },
-  { hour: "7p", index: 1, value: 165 },
-  { hour: "8p", index: 1, value: 130 },
-  { hour: "9p", index: 1, value: 140 },
-  { hour: "10p", index: 1, value: 170 },
-  { hour: "11p", index: 1, value: 180 },
+const ram_sunday = [
+  { hour: "12a", index: 1, value: 70 }, // x = 12a, y = 1, z = 70
+  { hour: "1a", index: 1, value: 20 },
+  { hour: "2a", index: 1, value: 50 },
+  { hour: "3a", index: 1, value: 20 },
+  { hour: "4a", index: 1, value: 60 },
+  { hour: "5a", index: 1, value: 80 },
+  { hour: "6a", index: 1, value: 0 },
+  { hour: "7a", index: 1, value: 20 },
+  { hour: "8a", index: 1, value: 80 },
+  { hour: "9a", index: 1, value: 70 },
+  { hour: "10a", index: 1, value: 60 },
+  { hour: "11a", index: 1, value: 70 },
+  { hour: "12a", index: 1, value: 80 },
+  { hour: "1p", index: 1, value: 44 },
+  { hour: "2p", index: 1, value: 66 },
+  { hour: "3p", index: 1, value: 4 },
+  { hour: "4p", index: 1, value: 5 },
+  { hour: "5p", index: 1, value: 7 },
+  { hour: "6p", index: 1, value: 8 },
+  { hour: "7p", index: 1, value: 65 },
+  { hour: "8p", index: 1, value: 40 },
+  { hour: "9p", index: 1, value: 30 },
+  { hour: "10p", index: 1, value: 60 },
+  { hour: "11p", index: 1, value: 44 },
 ];
 
-const data02 = [
-  { hour: "12a", index: 1, value: 160 },
-  { hour: "1a", index: 1, value: 180 },
-  { hour: "2a", index: 1, value: 150 },
-  { hour: "3a", index: 1, value: 120 },
-  { hour: "4a", index: 1, value: 200 },
-  { hour: "5a", index: 1, value: 300 },
-  { hour: "6a", index: 1, value: 100 },
-  { hour: "7a", index: 1, value: 200 },
-  { hour: "8a", index: 1, value: 100 },
-  { hour: "9a", index: 1, value: 150 },
-  { hour: "10a", index: 1, value: 160 },
-  { hour: "11a", index: 1, value: 160 },
-  { hour: "12a", index: 1, value: 180 },
-  { hour: "1p", index: 1, value: 144 },
-  { hour: "2p", index: 1, value: 166 },
-  { hour: "3p", index: 1, value: 145 },
-  { hour: "4p", index: 1, value: 150 },
-  { hour: "5p", index: 1, value: 160 },
-  { hour: "6p", index: 1, value: 180 },
-  { hour: "7p", index: 1, value: 165 },
-  { hour: "8p", index: 1, value: 130 },
-  { hour: "9p", index: 1, value: 140 },
-  { hour: "10p", index: 1, value: 160 },
-  { hour: "11p", index: 1, value: 180 },
+const ram_monday = [
+  { hour: "12a", index: 1, value: 0 }, // x = 12a, y = 1, z = 70
+  { hour: "1a", index: 1, value: 20 },
+  { hour: "2a", index: 1, value: 0 },
+  { hour: "3a", index: 1, value: 20 },
+  { hour: "4a", index: 1, value: 60 },
+  { hour: "5a", index: 1, value: 30 },
+  { hour: "6a", index: 1, value: 50 },
+  { hour: "7a", index: 1, value: 20 },
+  { hour: "8a", index: 1, value: 60 },
+  { hour: "9a", index: 1, value: 10 },
+  { hour: "10a", index: 1, value: 56 },
+  { hour: "11a", index: 1, value: 40 },
+  { hour: "12a", index: 1, value: 0 },
+  { hour: "1p", index: 1, value: 4 },
+  { hour: "2p", index: 1, value: 66 },
+  { hour: "3p", index: 1, value: 5 },
+  { hour: "4p", index: 1, value: 50 },
+  { hour: "5p", index: 1, value: 0 },
+  { hour: "6p", index: 1, value: 70 },
+  { hour: "7p", index: 1, value: 65 },
+  { hour: "8p", index: 1, value: 60 },
+  { hour: "9p", index: 1, value: 30 },
+  { hour: "10p", index: 1, value: 40 },
+  { hour: "11p", index: 1, value: 60 },
+];
+
+const ram_tuesday = [
+  { hour: "12a", index: 1, value: 0 }, // x = 12a, y = 1, z = 70
+  { hour: "1a", index: 1, value: 0 },
+  { hour: "2a", index: 1, value: 0 },
+  { hour: "3a", index: 1, value: 0 },
+  { hour: "4a", index: 1, value: 0 },
+  { hour: "5a", index: 1, value: 0 },
+  { hour: "6a", index: 1, value: 0 },
+  { hour: "7a", index: 1, value: 10 },
+  { hour: "8a", index: 1, value: 20 },
+  { hour: "9a", index: 1, value: 40 },
+  { hour: "10a", index: 1, value: 0 },
+  { hour: "11a", index: 1, value: 80 },
+  { hour: "12a", index: 1, value: 100 },
+  { hour: "1p", index: 1, value: 100 },
+  { hour: "2p", index: 1, value: 90 },
+  { hour: "3p", index: 1, value: 80 },
+  { hour: "4p", index: 1, value: 0 },
+  { hour: "5p", index: 1, value: 90 },
+  { hour: "6p", index: 1, value: 80 },
+  { hour: "7p", index: 1, value: 65 },
+  { hour: "8p", index: 1, value: 0 },
+  { hour: "9p", index: 1, value: 0 },
+  { hour: "10p", index: 1, value: 0 },
+  { hour: "11p", index: 1, value: 0 },
+];
+
+const ram_wednesday = [
+  { hour: "12a", index: 1, value: 0 }, // x = 12a, y = 1, z = 70
+  { hour: "1a", index: 1, value: 0 },
+  { hour: "2a", index: 1, value: 0 },
+  { hour: "3a", index: 1, value: 0 },
+  { hour: "4a", index: 1, value: 60 },
+  { hour: "5a", index: 1, value: 80 },
+  { hour: "6a", index: 1, value: 50 },
+  { hour: "7a", index: 1, value: 20 },
+  { hour: "8a", index: 1, value: 80 },
+  { hour: "9a", index: 1, value: 0 },
+  { hour: "10a", index: 1, value: 60 },
+  { hour: "11a", index: 1, value: 72 },
+  { hour: "12a", index: 1, value: 38 },
+  { hour: "1p", index: 1, value: 44 },
+  { hour: "2p", index: 1, value: 66 },
+  { hour: "3p", index: 1, value: 45 },
+  { hour: "4p", index: 1, value: 5 },
+  { hour: "5p", index: 1, value: 0 },
+  { hour: "6p", index: 1, value: 20 },
+  { hour: "7p", index: 1, value: 65 },
+  { hour: "8p", index: 1, value: 23 },
+  { hour: "9p", index: 1, value: 0 },
+  { hour: "10p", index: 1, value: 0 },
+  { hour: "11p", index: 1, value: 0 },
+];
+
+const ram_thursday = [
+  { hour: "12a", index: 1, value: 70 }, // x = 12a, y = 1, z = 70
+  { hour: "1a", index: 1, value: 20 },
+  { hour: "2a", index: 1, value: 50 },
+  { hour: "3a", index: 1, value: 20 },
+  { hour: "4a", index: 1, value: 60 },
+  { hour: "5a", index: 1, value: 80 },
+  { hour: "6a", index: 1, value: 0 },
+  { hour: "7a", index: 1, value: 20 },
+  { hour: "8a", index: 1, value: 80 },
+  { hour: "9a", index: 1, value: 70 },
+  { hour: "10a", index: 1, value: 60 },
+  { hour: "11a", index: 1, value: 70 },
+  { hour: "12a", index: 1, value: 80 },
+  { hour: "1p", index: 1, value: 44 },
+  { hour: "2p", index: 1, value: 66 },
+  { hour: "3p", index: 1, value: 45 },
+  { hour: "4p", index: 1, value: 50 },
+  { hour: "5p", index: 1, value: 70 },
+  { hour: "6p", index: 1, value: 80 },
+  { hour: "7p", index: 1, value: 65 },
+  { hour: "8p", index: 1, value: 0 },
+  { hour: "9p", index: 1, value: 40 },
+  { hour: "10p", index: 1, value: 70 },
+  { hour: "11p", index: 1, value: 80 },
+];
+
+const ram_friday = [
+  { hour: "12a", index: 1, value: 70 }, // x = 12a, y = 1, z = 70
+  { hour: "1a", index: 1, value: 20 },
+  { hour: "2a", index: 1, value: 50 },
+  { hour: "3a", index: 1, value: 20 },
+  { hour: "4a", index: 1, value: 60 },
+  { hour: "5a", index: 1, value: 80 },
+  { hour: "6a", index: 1, value: 0 },
+  { hour: "7a", index: 1, value: 20 },
+  { hour: "8a", index: 1, value: 80 },
+  { hour: "9a", index: 1, value: 70 },
+  { hour: "10a", index: 1, value: 60 },
+  { hour: "11a", index: 1, value: 70 },
+  { hour: "12a", index: 1, value: 80 },
+  { hour: "1p", index: 1, value: 44 },
+  { hour: "2p", index: 1, value: 66 },
+  { hour: "3p", index: 1, value: 45 },
+  { hour: "4p", index: 1, value: 50 },
+  { hour: "5p", index: 1, value: 70 },
+  { hour: "6p", index: 1, value: 80 },
+  { hour: "7p", index: 1, value: 65 },
+  { hour: "8p", index: 1, value: 0 },
+  { hour: "9p", index: 1, value: 40 },
+  { hour: "10p", index: 1, value: 70 },
+  { hour: "11p", index: 1, value: 80 },
+];
+
+const ram_saturday = [
+  { hour: "12a", index: 1, value: 16 },
+  { hour: "1a", index: 1, value: 18 },
+  { hour: "2a", index: 1, value: 0 },
+  { hour: "3a", index: 1, value: 20 },
+  { hour: "4a", index: 1, value: 0 },
+  { hour: "5a", index: 1, value: 30 },
+  { hour: "6a", index: 1, value: 10 },
+  { hour: "7a", index: 1, value: 20 },
+  { hour: "8a", index: 1, value: 10 },
+  { hour: "9a", index: 1, value: 15 },
+  { hour: "10a", index: 1, value: 16 },
+  { hour: "11a", index: 1, value: 16 },
+  { hour: "12a", index: 1, value: 18 },
+  { hour: "1p", index: 1, value: 14 },
+  { hour: "2p", index: 1, value: 16 },
+  { hour: "3p", index: 1, value: 45 },
+  { hour: "4p", index: 1, value: 50 },
+  { hour: "5p", index: 1, value: 60 },
+  { hour: "6p", index: 1, value: 80 },
+  { hour: "7p", index: 1, value: 65 },
+  { hour: "8p", index: 1, value: 0 },
+  { hour: "9p", index: 1, value: 40 },
+  { hour: "10p", index: 1, value: 60 },
+  { hour: "11p", index: 1, value: 20 },
 ];
 
 const parseDomain = () => [
@@ -77,11 +212,11 @@ const parseDomain = () => [
   Math.max(
     Math.max.apply(
       null,
-      data01.map((entry) => entry.value)
+      ram_sunday.map((entry) => entry.value)
     ),
     Math.max.apply(
       null,
-      data02.map((entry) => entry.value)
+      ram_saturday.map((entry) => entry.value)
     )
   ),
 ];
@@ -161,7 +296,7 @@ export default function BubbleChartPage() {
                   wrapperStyle={{ zIndex: 100 }}
                   content={renderTooltip}
                 />
-                <Scatter data={data01} fill="#8884d8" />
+                <Scatter data={ram_sunday} fill="#8884d8" />
               </ScatterChart>
 
               <ScatterChart
@@ -203,7 +338,7 @@ export default function BubbleChartPage() {
                   wrapperStyle={{ zIndex: 100 }}
                   content={renderTooltip}
                 />
-                <Scatter data={data02} fill="#8884d8" stroke="#black" />
+                <Scatter data={ram_monday} fill="#8884d8" stroke="#black" />
               </ScatterChart>
 
               <ScatterChart
@@ -245,7 +380,7 @@ export default function BubbleChartPage() {
                   wrapperStyle={{ zIndex: 100 }}
                   content={renderTooltip}
                 />
-                <Scatter data={data01} fill="#8884d8" stroke="#8884d8" />
+                <Scatter data={ram_tuesday} fill="#8884d8" stroke="#8884d8" />
               </ScatterChart>
 
               <ScatterChart
@@ -287,7 +422,7 @@ export default function BubbleChartPage() {
                   wrapperStyle={{ zIndex: 100 }}
                   content={renderTooltip}
                 />
-                <Scatter data={data02} fill="#8884d8" />
+                <Scatter data={ram_wednesday} fill="#8884d8" />
               </ScatterChart>
 
               <ScatterChart
@@ -329,7 +464,7 @@ export default function BubbleChartPage() {
                   wrapperStyle={{ zIndex: 100 }}
                   content={renderTooltip}
                 />
-                <Scatter data={data01} fill="#8884d8" />
+                <Scatter data={ram_thursday} fill="#8884d8" />
               </ScatterChart>
 
               <ScatterChart
@@ -371,7 +506,7 @@ export default function BubbleChartPage() {
                   wrapperStyle={{ zIndex: 100 }}
                   content={renderTooltip}
                 />
-                <Scatter data={data02} fill="#8884d8" />
+                <Scatter data={ram_friday} fill="#8884d8" />
               </ScatterChart>
 
               <ScatterChart
@@ -412,7 +547,7 @@ export default function BubbleChartPage() {
                   wrapperStyle={{ zIndex: 100 }}
                   content={renderTooltip}
                 />
-                <Scatter data={data01} fill="#8884d8" />
+                <Scatter data={ram_saturday} fill="#8884d8" />
               </ScatterChart>
             </div>
           </ResponsiveContainer>
