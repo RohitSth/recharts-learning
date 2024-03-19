@@ -45,10 +45,14 @@ const data = [
     skill: "React",
     percentage: 75,
   },
-  {
-    skill: "Angular",
-    percentage: 55,
-  },
+  // {
+  //   skill: "abs",
+  //   percentage: 75,
+  // },
+  // {
+  //   skill: "abegss",
+  //   percentage: 75,
+  // },
 ];
 
 export default function Page() {
@@ -83,27 +87,27 @@ export default function Page() {
               </BarChart>
             </ResponsiveContainer>
           ) : (
-            <ResponsiveContainer width={600} height={450}>
+            <ResponsiveContainer width={600} height={550}>
               <RadarChart
-                cx={300}
-                cy={250}
-                outerRadius={150}
+                // cx={300}
+                // cy={250}
+                // outerRadius={150}
                 width={500}
                 height={500}
                 data={data}
               >
                 <PolarGrid />
                 <PolarAngleAxis dataKey="skill" />
-                <PolarRadiusAxis />
+                {/* <PolarRadiusAxis /> */}
                 <Radar
                   name="Ram"
                   dataKey="percentage"
                   stroke="#6E29F7"
                   fill="#6E29F7"
-                  fillOpacity={0.6}
+                  fillOpacity={0.7}
                 />
                 <Tooltip />
-                <Legend />
+                <Legend values="100%" />
               </RadarChart>
             </ResponsiveContainer>
           )}

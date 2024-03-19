@@ -10,201 +10,198 @@ import {
   Legend,
 } from "recharts";
 
-const data = [
-  { x: 100, y: 200, z: 10 },
-  { x: 150, y: 400, z: 20 },
-  { x: 200, y: 600, z: 30 },
-  { x: 250, y: 800, z: 40 },
-  { x: 300, y: 1000, z: 50 },
-];
+const clockIn = 45;
+const clockOut = 0;
+const startTimer = 100;
+const stopTimer = 50;
 
 const ram_sunday = [
-  { hour: "12a", index: 1, value: 70 }, // x = 12a, y = 1, z = 70
-  { hour: "1a", index: 1, value: 20 },
-  { hour: "2a", index: 1, value: 50 },
-  { hour: "3a", index: 1, value: 20 },
-  { hour: "4a", index: 1, value: 60 },
-  { hour: "5a", index: 1, value: 80 },
-  { hour: "6a", index: 1, value: 0 },
-  { hour: "7a", index: 1, value: 20 },
-  { hour: "8a", index: 1, value: 80 },
-  { hour: "9a", index: 1, value: 70 },
-  { hour: "10a", index: 1, value: 60 },
-  { hour: "11a", index: 1, value: 70 },
-  { hour: "12a", index: 1, value: 80 },
-  { hour: "1p", index: 1, value: 44 },
-  { hour: "2p", index: 1, value: 66 },
-  { hour: "3p", index: 1, value: 4 },
-  { hour: "4p", index: 1, value: 5 },
-  { hour: "5p", index: 1, value: 7 },
-  { hour: "6p", index: 1, value: 8 },
-  { hour: "7p", index: 1, value: 65 },
-  { hour: "8p", index: 1, value: 40 },
-  { hour: "9p", index: 1, value: 30 },
-  { hour: "10p", index: 1, value: 60 },
-  { hour: "11p", index: 1, value: 44 },
+  { hour: "12a", index: 1, value: clockOut }, // x = 12a, y = 1, z = 70
+  { hour: "1a", index: 1, value: clockOut },
+  { hour: "2a", index: 1, value: clockOut },
+  { hour: "3a", index: 1, value: clockOut },
+  { hour: "4a", index: 1, value: clockOut },
+  { hour: "5a", index: 1, value: clockOut },
+  { hour: "6a", index: 1, value: clockIn },
+  { hour: "7a", index: 1, value: clockIn },
+  { hour: "8a", index: 1, value: clockIn },
+  { hour: "9a", index: 1, value: clockIn },
+  { hour: "10a", index: 1, value: startTimer },
+  { hour: "11a", index: 1, value: startTimer },
+  { hour: "12a", index: 1, value: startTimer },
+  { hour: "1p", index: 1, value: startTimer },
+  { hour: "2p", index: 1, value: startTimer },
+  { hour: "3p", index: 1, value: startTimer },
+  { hour: "4p", index: 1, value: stopTimer },
+  { hour: "5p", index: 1, value: startTimer },
+  { hour: "6p", index: 1, value: startTimer },
+  { hour: "7p", index: 1, value: clockOut },
+  { hour: "8p", index: 1, value: clockOut },
+  { hour: "9p", index: 1, value: clockOut },
+  { hour: "10p", index: 1, value: clockOut },
+  { hour: "11p", index: 1, value: clockOut },
 ];
 
 const ram_monday = [
-  { hour: "12a", index: 1, value: 0 }, // x = 12a, y = 1, z = 70
-  { hour: "1a", index: 1, value: 20 },
-  { hour: "2a", index: 1, value: 0 },
-  { hour: "3a", index: 1, value: 20 },
-  { hour: "4a", index: 1, value: 60 },
-  { hour: "5a", index: 1, value: 30 },
-  { hour: "6a", index: 1, value: 50 },
-  { hour: "7a", index: 1, value: 20 },
-  { hour: "8a", index: 1, value: 60 },
-  { hour: "9a", index: 1, value: 10 },
-  { hour: "10a", index: 1, value: 56 },
-  { hour: "11a", index: 1, value: 40 },
-  { hour: "12a", index: 1, value: 0 },
-  { hour: "1p", index: 1, value: 4 },
-  { hour: "2p", index: 1, value: 66 },
-  { hour: "3p", index: 1, value: 5 },
-  { hour: "4p", index: 1, value: 50 },
-  { hour: "5p", index: 1, value: 0 },
-  { hour: "6p", index: 1, value: 70 },
-  { hour: "7p", index: 1, value: 65 },
-  { hour: "8p", index: 1, value: 60 },
-  { hour: "9p", index: 1, value: 30 },
-  { hour: "10p", index: 1, value: 40 },
-  { hour: "11p", index: 1, value: 60 },
+  { hour: "12a", index: 1, value: clockOut }, // x = 12a, y = 1, z = 70
+  { hour: "1a", index: 1, value: clockOut },
+  { hour: "2a", index: 1, value: clockOut },
+  { hour: "3a", index: 1, value: clockOut },
+  { hour: "4a", index: 1, value: clockOut },
+  { hour: "5a", index: 1, value: clockOut },
+  { hour: "6a", index: 1, value: clockIn },
+  { hour: "7a", index: 1, value: startTimer },
+  { hour: "8a", index: 1, value: startTimer },
+  { hour: "9a", index: 1, value: startTimer },
+  { hour: "10a", index: 1, value: stopTimer },
+  { hour: "11a", index: 1, value: startTimer },
+  { hour: "12a", index: 1, value: startTimer },
+  { hour: "1p", index: 1, value: startTimer },
+  { hour: "2p", index: 1, value: startTimer },
+  { hour: "3p", index: 1, value: startTimer },
+  { hour: "4p", index: 1, value: startTimer },
+  { hour: "5p", index: 1, value: startTimer },
+  { hour: "6p", index: 1, value: clockOut },
+  { hour: "7p", index: 1, value: clockOut },
+  { hour: "8p", index: 1, value: clockOut },
+  { hour: "9p", index: 1, value: clockOut },
+  { hour: "10p", index: 1, value: clockOut },
+  { hour: "11p", index: 1, value: clockOut },
 ];
 
 const ram_tuesday = [
-  { hour: "12a", index: 1, value: 0 }, // x = 12a, y = 1, z = 70
-  { hour: "1a", index: 1, value: 0 },
-  { hour: "2a", index: 1, value: 0 },
-  { hour: "3a", index: 1, value: 0 },
-  { hour: "4a", index: 1, value: 0 },
-  { hour: "5a", index: 1, value: 0 },
-  { hour: "6a", index: 1, value: 0 },
-  { hour: "7a", index: 1, value: 10 },
-  { hour: "8a", index: 1, value: 20 },
-  { hour: "9a", index: 1, value: 40 },
-  { hour: "10a", index: 1, value: 0 },
-  { hour: "11a", index: 1, value: 80 },
-  { hour: "12a", index: 1, value: 100 },
-  { hour: "1p", index: 1, value: 100 },
-  { hour: "2p", index: 1, value: 90 },
-  { hour: "3p", index: 1, value: 80 },
-  { hour: "4p", index: 1, value: 0 },
-  { hour: "5p", index: 1, value: 90 },
-  { hour: "6p", index: 1, value: 80 },
-  { hour: "7p", index: 1, value: 65 },
-  { hour: "8p", index: 1, value: 0 },
-  { hour: "9p", index: 1, value: 0 },
-  { hour: "10p", index: 1, value: 0 },
-  { hour: "11p", index: 1, value: 0 },
+  { hour: "12a", index: 1, value: clockOut }, // x = 12a, y = 1, z = 70
+  { hour: "1a", index: 1, value: clockOut },
+  { hour: "2a", index: 1, value: clockOut },
+  { hour: "3a", index: 1, value: clockOut },
+  { hour: "4a", index: 1, value: clockOut },
+  { hour: "5a", index: 1, value: clockOut },
+  { hour: "6a", index: 1, value: clockIn },
+  { hour: "7a", index: 1, value: startTimer },
+  { hour: "8a", index: 1, value: startTimer },
+  { hour: "9a", index: 1, value: startTimer },
+  { hour: "10a", index: 1, value: startTimer },
+  { hour: "11a", index: 1, value: stopTimer },
+  { hour: "12a", index: 1, value: stopTimer },
+  { hour: "1p", index: 1, value: startTimer },
+  { hour: "2p", index: 1, value: startTimer },
+  { hour: "3p", index: 1, value: startTimer },
+  { hour: "4p", index: 1, value: clockOut },
+  { hour: "5p", index: 1, value: clockOut },
+  { hour: "6p", index: 1, value: clockOut },
+  { hour: "7p", index: 1, value: clockOut },
+  { hour: "8p", index: 1, value: clockOut },
+  { hour: "9p", index: 1, value: startTimer },
+  { hour: "10p", index: 1, value: startTimer },
+  { hour: "11p", index: 1, value: clockOut },
 ];
 
 const ram_wednesday = [
-  { hour: "12a", index: 1, value: 0 }, // x = 12a, y = 1, z = 70
-  { hour: "1a", index: 1, value: 0 },
-  { hour: "2a", index: 1, value: 0 },
-  { hour: "3a", index: 1, value: 0 },
-  { hour: "4a", index: 1, value: 60 },
-  { hour: "5a", index: 1, value: 80 },
-  { hour: "6a", index: 1, value: 50 },
-  { hour: "7a", index: 1, value: 20 },
-  { hour: "8a", index: 1, value: 80 },
-  { hour: "9a", index: 1, value: 0 },
-  { hour: "10a", index: 1, value: 60 },
-  { hour: "11a", index: 1, value: 72 },
-  { hour: "12a", index: 1, value: 38 },
-  { hour: "1p", index: 1, value: 44 },
-  { hour: "2p", index: 1, value: 66 },
-  { hour: "3p", index: 1, value: 45 },
-  { hour: "4p", index: 1, value: 5 },
-  { hour: "5p", index: 1, value: 0 },
-  { hour: "6p", index: 1, value: 20 },
-  { hour: "7p", index: 1, value: 65 },
-  { hour: "8p", index: 1, value: 23 },
-  { hour: "9p", index: 1, value: 0 },
-  { hour: "10p", index: 1, value: 0 },
-  { hour: "11p", index: 1, value: 0 },
+  { hour: "12a", index: 1, value: clockOut }, // x = 12a, y = 1, z = 70
+  { hour: "1a", index: 1, value: clockOut },
+  { hour: "2a", index: 1, value: clockOut },
+  { hour: "3a", index: 1, value: clockOut },
+  { hour: "4a", index: 1, value: clockIn },
+  { hour: "5a", index: 1, value: startTimer },
+  { hour: "6a", index: 1, value: startTimer },
+  { hour: "7a", index: 1, value: startTimer },
+  { hour: "8a", index: 1, value: startTimer },
+  { hour: "9a", index: 1, value: stopTimer },
+  { hour: "10a", index: 1, value: startTimer },
+  { hour: "11a", index: 1, value: startTimer },
+  { hour: "12a", index: 1, value: startTimer },
+  { hour: "1p", index: 1, value: startTimer },
+  { hour: "2p", index: 1, value: startTimer },
+  { hour: "3p", index: 1, value: startTimer },
+  { hour: "4p", index: 1, value: stopTimer },
+  { hour: "5p", index: 1, value: stopTimer },
+  { hour: "6p", index: 1, value: startTimer },
+  { hour: "7p", index: 1, value: startTimer },
+  { hour: "8p", index: 1, value: clockOut },
+  { hour: "9p", index: 1, value: clockOut },
+  { hour: "10p", index: 1, value: clockOut },
+  { hour: "11p", index: 1, value: clockOut },
 ];
 
 const ram_thursday = [
-  { hour: "12a", index: 1, value: 70 }, // x = 12a, y = 1, z = 70
-  { hour: "1a", index: 1, value: 20 },
-  { hour: "2a", index: 1, value: 50 },
-  { hour: "3a", index: 1, value: 20 },
-  { hour: "4a", index: 1, value: 60 },
-  { hour: "5a", index: 1, value: 80 },
-  { hour: "6a", index: 1, value: 0 },
-  { hour: "7a", index: 1, value: 20 },
-  { hour: "8a", index: 1, value: 80 },
-  { hour: "9a", index: 1, value: 70 },
-  { hour: "10a", index: 1, value: 60 },
-  { hour: "11a", index: 1, value: 70 },
-  { hour: "12a", index: 1, value: 80 },
-  { hour: "1p", index: 1, value: 44 },
-  { hour: "2p", index: 1, value: 66 },
-  { hour: "3p", index: 1, value: 45 },
-  { hour: "4p", index: 1, value: 50 },
-  { hour: "5p", index: 1, value: 70 },
-  { hour: "6p", index: 1, value: 80 },
-  { hour: "7p", index: 1, value: 65 },
-  { hour: "8p", index: 1, value: 0 },
-  { hour: "9p", index: 1, value: 40 },
-  { hour: "10p", index: 1, value: 70 },
-  { hour: "11p", index: 1, value: 80 },
+  { hour: "12a", index: 1, value: clockOut }, // x = 12a, y = 1, z = 70
+  { hour: "1a", index: 1, value: clockOut },
+  { hour: "2a", index: 1, value: clockOut },
+  { hour: "3a", index: 1, value: clockOut },
+  { hour: "4a", index: 1, value: clockOut },
+  { hour: "5a", index: 1, value: startTimer },
+  { hour: "6a", index: 1, value: startTimer },
+  { hour: "7a", index: 1, value: startTimer },
+  { hour: "8a", index: 1, value: startTimer },
+  { hour: "9a", index: 1, value: stopTimer },
+  { hour: "10a", index: 1, value: startTimer },
+  { hour: "11a", index: 1, value: startTimer },
+  { hour: "12a", index: 1, value: startTimer },
+  { hour: "1p", index: 1, value: startTimer },
+  { hour: "2p", index: 1, value: stopTimer },
+  { hour: "3p", index: 1, value: startTimer },
+  { hour: "4p", index: 1, value: startTimer },
+  { hour: "5p", index: 1, value: startTimer },
+  { hour: "6p", index: 1, value: startTimer },
+  { hour: "7p", index: 1, value: clockOut },
+  { hour: "8p", index: 1, value: clockOut },
+  { hour: "9p", index: 1, value: clockOut },
+  { hour: "10p", index: 1, value: clockOut },
+  { hour: "11p", index: 1, value: clockOut },
 ];
 
 const ram_friday = [
-  { hour: "12a", index: 1, value: 70 }, // x = 12a, y = 1, z = 70
-  { hour: "1a", index: 1, value: 20 },
-  { hour: "2a", index: 1, value: 50 },
-  { hour: "3a", index: 1, value: 20 },
-  { hour: "4a", index: 1, value: 60 },
-  { hour: "5a", index: 1, value: 80 },
-  { hour: "6a", index: 1, value: 0 },
-  { hour: "7a", index: 1, value: 20 },
-  { hour: "8a", index: 1, value: 80 },
-  { hour: "9a", index: 1, value: 70 },
-  { hour: "10a", index: 1, value: 60 },
-  { hour: "11a", index: 1, value: 70 },
-  { hour: "12a", index: 1, value: 80 },
-  { hour: "1p", index: 1, value: 44 },
-  { hour: "2p", index: 1, value: 66 },
-  { hour: "3p", index: 1, value: 45 },
-  { hour: "4p", index: 1, value: 50 },
-  { hour: "5p", index: 1, value: 70 },
-  { hour: "6p", index: 1, value: 80 },
-  { hour: "7p", index: 1, value: 65 },
-  { hour: "8p", index: 1, value: 0 },
-  { hour: "9p", index: 1, value: 40 },
-  { hour: "10p", index: 1, value: 70 },
-  { hour: "11p", index: 1, value: 80 },
+  { hour: "12a", index: 1, value: clockOut }, // x = 12a, y = 1, z = 70
+  { hour: "1a", index: 1, value: clockOut },
+  { hour: "2a", index: 1, value: clockOut },
+  { hour: "3a", index: 1, value: clockOut },
+  { hour: "4a", index: 1, value: clockOut },
+  { hour: "5a", index: 1, value: startTimer },
+  { hour: "6a", index: 1, value: startTimer },
+  { hour: "7a", index: 1, value: startTimer },
+  { hour: "8a", index: 1, value: startTimer },
+  { hour: "9a", index: 1, value: startTimer },
+  { hour: "10a", index: 1, value: stopTimer },
+  { hour: "11a", index: 1, value: stopTimer },
+  { hour: "12a", index: 1, value: clockOut },
+  { hour: "1p", index: 1, value: clockOut },
+  { hour: "2p", index: 1, value: clockOut },
+  { hour: "3p", index: 1, value: clockOut },
+  { hour: "4p", index: 1, value: clockOut },
+  { hour: "5p", index: 1, value: startTimer },
+  { hour: "6p", index: 1, value: startTimer },
+  { hour: "7p", index: 1, value: startTimer },
+  { hour: "8p", index: 1, value: stopTimer },
+  { hour: "9p", index: 1, value: clockOut },
+  { hour: "10p", index: 1, value: clockOut },
+  { hour: "11p", index: 1, value: clockOut },
 ];
 
 const ram_saturday = [
-  { hour: "12a", index: 1, value: 16 },
-  { hour: "1a", index: 1, value: 18 },
-  { hour: "2a", index: 1, value: 0 },
-  { hour: "3a", index: 1, value: 20 },
-  { hour: "4a", index: 1, value: 0 },
-  { hour: "5a", index: 1, value: 30 },
-  { hour: "6a", index: 1, value: 10 },
-  { hour: "7a", index: 1, value: 20 },
-  { hour: "8a", index: 1, value: 10 },
-  { hour: "9a", index: 1, value: 15 },
-  { hour: "10a", index: 1, value: 16 },
-  { hour: "11a", index: 1, value: 16 },
-  { hour: "12a", index: 1, value: 18 },
-  { hour: "1p", index: 1, value: 14 },
-  { hour: "2p", index: 1, value: 16 },
-  { hour: "3p", index: 1, value: 45 },
-  { hour: "4p", index: 1, value: 50 },
-  { hour: "5p", index: 1, value: 60 },
-  { hour: "6p", index: 1, value: 80 },
-  { hour: "7p", index: 1, value: 65 },
-  { hour: "8p", index: 1, value: 0 },
-  { hour: "9p", index: 1, value: 40 },
-  { hour: "10p", index: 1, value: 60 },
-  { hour: "11p", index: 1, value: 20 },
+  { hour: "12a", index: 1, value: clockOut },
+  { hour: "1a", index: 1, value: clockOut },
+  { hour: "2a", index: 1, value: clockOut },
+  { hour: "3a", index: 1, value: clockOut },
+  { hour: "4a", index: 1, value: startTimer },
+  { hour: "5a", index: 1, value: startTimer },
+  { hour: "6a", index: 1, value: stopTimer },
+  { hour: "7a", index: 1, value: startTimer },
+  { hour: "8a", index: 1, value: startTimer },
+  { hour: "9a", index: 1, value: startTimer },
+  { hour: "10a", index: 1, value: startTimer },
+  { hour: "11a", index: 1, value: startTimer },
+  { hour: "12a", index: 1, value: stopTimer },
+  { hour: "1p", index: 1, value: clockIn },
+  { hour: "2p", index: 1, value: startTimer },
+  { hour: "3p", index: 1, value: startTimer },
+  { hour: "4p", index: 1, value: startTimer },
+  { hour: "5p", index: 1, value: startTimer },
+  { hour: "6p", index: 1, value: clockOut },
+  { hour: "7p", index: 1, value: clockOut },
+  { hour: "8p", index: 1, value: clockOut },
+  { hour: "9p", index: 1, value: clockOut },
+  { hour: "10p", index: 1, value: clockOut },
+  { hour: "11p", index: 1, value: clockOut },
 ];
 
 const parseDomain = () => [
@@ -238,8 +235,8 @@ const renderTooltip = (props: any) => {
       >
         <p>{data.hour}</p>
         <p>
-          <span>value: </span>
-          {data.value}
+          {data.value > 0 ? "ClockIn" : "ClockOut"}
+          {data.value === 100 && " + SetTimer"}
         </p>
       </div>
     );
@@ -255,16 +252,16 @@ export default function BubbleChartPage() {
     <>
       <div className="flex min-h-48 flex-col items-center justify-center px-4 md:px-8 xl:px-10">
         <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500">
-          <ResponsiveContainer width="100%" height={400}>
+          <ResponsiveContainer>
             <div>
               <ScatterChart
-                width={800}
+                width={1000}
                 height={60}
                 margin={{
                   top: 10,
                   right: 0,
                   bottom: 0,
-                  left: 0,
+                  left: 20,
                 }}
               >
                 <XAxis
@@ -287,7 +284,7 @@ export default function BubbleChartPage() {
                 />
                 <ZAxis
                   type="number"
-                  dataKey="value"
+                  dataKey={"value"}
                   domain={domain}
                   range={range}
                 />
@@ -300,13 +297,13 @@ export default function BubbleChartPage() {
               </ScatterChart>
 
               <ScatterChart
-                width={800}
+                width={1000}
                 height={60}
                 margin={{
                   top: 10,
                   right: 0,
                   bottom: 0,
-                  left: 0,
+                  left: 20,
                 }}
               >
                 <XAxis
@@ -342,13 +339,13 @@ export default function BubbleChartPage() {
               </ScatterChart>
 
               <ScatterChart
-                width={800}
+                width={1000}
                 height={60}
                 margin={{
                   top: 10,
                   right: 0,
                   bottom: 0,
-                  left: 0,
+                  left: 20,
                 }}
               >
                 <XAxis
@@ -384,13 +381,13 @@ export default function BubbleChartPage() {
               </ScatterChart>
 
               <ScatterChart
-                width={800}
+                width={1000}
                 height={60}
                 margin={{
                   top: 10,
                   right: 0,
                   bottom: 0,
-                  left: 0,
+                  left: 20,
                 }}
               >
                 <XAxis
@@ -426,13 +423,13 @@ export default function BubbleChartPage() {
               </ScatterChart>
 
               <ScatterChart
-                width={800}
+                width={1000}
                 height={60}
                 margin={{
                   top: 10,
                   right: 0,
                   bottom: 0,
-                  left: 0,
+                  left: 20,
                 }}
               >
                 <XAxis
@@ -468,13 +465,13 @@ export default function BubbleChartPage() {
               </ScatterChart>
 
               <ScatterChart
-                width={800}
+                width={1000}
                 height={60}
                 margin={{
                   top: 10,
                   right: 0,
                   bottom: 0,
-                  left: 0,
+                  left: 20,
                 }}
               >
                 <XAxis
@@ -510,13 +507,13 @@ export default function BubbleChartPage() {
               </ScatterChart>
 
               <ScatterChart
-                width={800}
+                width={1000}
                 height={60}
                 margin={{
                   top: 10,
                   right: 0,
                   bottom: 0,
-                  left: 0,
+                  left: 20,
                 }}
               >
                 <XAxis
