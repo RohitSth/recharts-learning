@@ -4,6 +4,8 @@ import { useState, useCallback } from "react";
 
 import {
   LineChart,
+  AreaChart,
+  Area,
   Line,
   ResponsiveContainer,
   XAxis,
@@ -79,32 +81,68 @@ const ramData = [
 const LineChartComponent = () => {
   return (
     <>
-      <div className="flex min-h-48 flex-col items-center justify-center px-4 md:px-8 xl:px-10">
-        <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500">
-          <ResponsiveContainer width={650} height={450}>
-            <LineChart data={ramData} margin={{ right: 30 }}>
-              <XAxis dataKey="name" />
-              <YAxis />
-              <CartesianGrid strokeDasharray="3 3" />
+      <div className="flex justify-center mt-20">
+        <div className="flex min-h-48 flex-col items-center justify-center px-4 md:px-8 xl:px-10">
+          <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500">
+            <ResponsiveContainer width={650} height={450}>
+              <LineChart data={ramData} margin={{ right: 30 }}>
+                <XAxis dataKey="name" />
+                <YAxis />
+                <CartesianGrid strokeDasharray="3 3" />
 
-              <Tooltip
-                content={<CustomTooltip active={false} payload={[]} label="" />}
-              />
-              <Legend />
+                <Tooltip
+                  content={
+                    <CustomTooltip active={false} payload={[]} label="" />
+                  }
+                />
+                <Legend />
 
-              <Line
-                type="monotone"
-                dataKey="currentPerformance"
-                stroke="#3b82f6"
-              />
-              <Line
-                type="monotone"
-                dataKey="expected"
-                stroke="#8b5cf6"
-                strokeDasharray="5 5"
-              />
-            </LineChart>
-          </ResponsiveContainer>
+                <Line
+                  type="monotone"
+                  dataKey="currentPerformance"
+                  stroke="#3b82f6"
+                />
+                <Line
+                  type="monotone"
+                  dataKey="expected"
+                  stroke="#8b5cf6"
+                  strokeDasharray="5 5"
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+        <div className="flex min-h-48 flex-col items-center justify-center px-4 md:px-8 xl:px-10">
+          <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500">
+            <ResponsiveContainer width={650} height={450}>
+              <AreaChart data={ramData} margin={{ right: 30 }}>
+                <XAxis dataKey="name" />
+                <YAxis />
+                <CartesianGrid strokeDasharray="3 3" />
+
+                <Tooltip
+                  content={
+                    <CustomTooltip active={false} payload={[]} label="" />
+                  }
+                />
+                <Legend />
+
+                <Area
+                  type="monotone"
+                  dataKey="expected"
+                  stroke="#ffffff"
+                  fill="#8a0cf0"
+                  strokeDasharray="8 8"
+                />
+                <Area
+                  type="monotone"
+                  dataKey="currentPerformance"
+                  stroke="#3b82f6"
+                  fill="#3b00f6"
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
     </>
