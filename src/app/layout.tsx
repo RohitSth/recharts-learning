@@ -25,7 +25,9 @@ export default function RootLayout({
       }}
     >
       <body className={inter.className}>
-        <Header />
+        <div className="bg-black mx-24 rounded-b-3xl h-28 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-x-blue-600 border-b-blue-600 border-t-blue-950/0 p-11 hover:bg-opacity-25 mb-10 shadow-lg shadow-blue-700">
+          <Header />
+        </div>
         {children}
       </body>
     </html>

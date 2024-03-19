@@ -93,7 +93,7 @@ const LineChartComponent = () => {
   return (
     <>
       <div className="flex min-h-48 flex-col items-center justify-center px-4 md:px-8 xl:px-10">
-        <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25">
+        <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500">
           <ResponsiveContainer width={350} height={250}>
             <LineChart
               width={500}
