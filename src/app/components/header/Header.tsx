@@ -35,6 +35,18 @@ const Header = () => {
           <Link className="mr-5 hover:text-blue-400" href="/chart/linechart">
             Line Chart
           </Link>
+          <Link className="mr-5 hover:text-blue-400" href="/chart/gaugechart">
+            Gauge Chart
+          </Link>
+          <Link
+            className="mr-5 hover:text-blue-400"
+            href="/chart/testing-gauge"
+          >
+            TestGauge Chart
+          </Link>
+          <Link className="mr-5 hover:text-blue-400" href="/chart/github-chart">
+            GitHub Chart
+          </Link>
         </nav>
       </div>
     </header>

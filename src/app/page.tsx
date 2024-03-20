@@ -2,6 +2,7 @@ import AreaChart from "./components/AreaChart";
 import BarChart from "./components/BarChart";
 import BarChart2 from "./components/BarChart2";
 import LineChart from "./components/LineChart";
+import Page from "./components/weather/page";
 
 export default function Home() {
   return (
@@ -26,6 +27,8 @@ export default function Home() {
           <BarChart2 />
           <div className="flex justify-center">Single Bar Chart</div>
         </div>
+
+        {/* <Page /> */}
       </div>
     </main>
   );
