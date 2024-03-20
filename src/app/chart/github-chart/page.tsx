@@ -20,7 +20,7 @@ export default function GitChartPage() {
             type="text"
             placeholder="Enter your GitHub username"
             onChange={(e) => handleChange(e)}
-            className="text-white bg-blue-800 rounded-md p-2 focus:outline-none active:bg-blue-700 mx-auto"
+            className="text-white bg-blue-950 rounded-md p-2 focus:outline-none active:bg-blue-700 mx-auto"
           />
           {username.length !== 0 && (
             <div className="mt-10 flex justify-center">

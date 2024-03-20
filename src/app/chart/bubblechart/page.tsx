@@ -7,7 +7,7 @@ import {
   ZAxis,
   ResponsiveContainer,
   Tooltip,
-  Legend,
+  Cell,
 } from "recharts";
 
 const clockIn = 45;
@@ -204,6 +204,8 @@ const ram_saturday = [
   { hour: "11p", index: 1, value: clockOut },
 ];
 
+const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
+
 const parseDomain = () => [
   0,
   Math.max(
@@ -226,9 +228,10 @@ const renderTooltip = (props: any) => {
 
     return (
       <div
+        className="rounded-lg"
         style={{
-          backgroundColor: "#000",
-          border: "1px solid #999",
+          backgroundColor: "rgba(0,0,0,0.7)",
+          border: "none",
           margin: 0,
           padding: 10,
         }}
@@ -293,7 +296,15 @@ export default function BubbleChartPage() {
                   wrapperStyle={{ zIndex: 100 }}
                   content={renderTooltip}
                 />
-                <Scatter data={ram_sunday} fill="#8884d8" />
+                {/* <Scatter data={ram_sunday} fill="#8884d8 " /> */}
+                <Scatter data={ram_sunday} fill="#8884d8">
+                  {ram_sunday.map((entry: any, index: number) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Scatter>
               </ScatterChart>
 
               <ScatterChart
@@ -335,7 +346,15 @@ export default function BubbleChartPage() {
                   wrapperStyle={{ zIndex: 100 }}
                   content={renderTooltip}
                 />
-                <Scatter data={ram_monday} fill="#8884d8" stroke="#black" />
+                {/* <Scatter data={ram_monday} fill="#8884d8" /> */}
+                <Scatter data={ram_monday} fill="#8884d8">
+                  {ram_monday.map((entry: any, index: number) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Scatter>
               </ScatterChart>
 
               <ScatterChart
@@ -377,7 +396,15 @@ export default function BubbleChartPage() {
                   wrapperStyle={{ zIndex: 100 }}
                   content={renderTooltip}
                 />
-                <Scatter data={ram_tuesday} fill="#8884d8" stroke="#8884d8" />
+                {/* <Scatter data={ram_tuesday} fill="#8884d8" /> */}
+                <Scatter data={ram_tuesday} fill="#8884d8">
+                  {ram_tuesday.map((entry: any, index: number) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Scatter>
               </ScatterChart>
 
               <ScatterChart
@@ -419,7 +446,15 @@ export default function BubbleChartPage() {
                   wrapperStyle={{ zIndex: 100 }}
                   content={renderTooltip}
                 />
-                <Scatter data={ram_wednesday} fill="#8884d8" />
+                {/* <Scatter data={ram_wednesday} fill="#8884d8" /> */}
+                <Scatter data={ram_wednesday} fill="#8884d8">
+                  {ram_wednesday.map((entry: any, index: number) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Scatter>
               </ScatterChart>
 
               <ScatterChart
@@ -461,7 +496,15 @@ export default function BubbleChartPage() {
                   wrapperStyle={{ zIndex: 100 }}
                   content={renderTooltip}
                 />
-                <Scatter data={ram_thursday} fill="#8884d8" />
+                {/* <Scatter data={ram_thursday} fill="#8884d8" /> */}
+                <Scatter data={ram_thursday} fill="#8884d8">
+                  {ram_thursday.map((entry: any, index: number) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Scatter>
               </ScatterChart>
 
               <ScatterChart
@@ -503,7 +546,15 @@ export default function BubbleChartPage() {
                   wrapperStyle={{ zIndex: 100 }}
                   content={renderTooltip}
                 />
-                <Scatter data={ram_friday} fill="#8884d8" />
+                {/* <Scatter data={ram_friday} fill="#8884d8" /> */}
+                <Scatter data={ram_friday} fill="#8884d8">
+                  {ram_friday.map((entry: any, index: number) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Scatter>
               </ScatterChart>
 
               <ScatterChart
@@ -544,7 +595,15 @@ export default function BubbleChartPage() {
                   wrapperStyle={{ zIndex: 100 }}
                   content={renderTooltip}
                 />
-                <Scatter data={ram_saturday} fill="#8884d8" />
+                {/* <Scatter data={ram_saturday} fill="#8884d8" /> */}
+                <Scatter data={ram_saturday} fill="#8884d8">
+                  {ram_saturday.map((entry: any, index: number) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Scatter>
               </ScatterChart>
             </div>
           </ResponsiveContainer>
