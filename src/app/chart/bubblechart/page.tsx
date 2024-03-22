@@ -204,7 +204,7 @@ const ram_saturday = [
   { hour: "11p", index: 1, value: clockOut },
 ];
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
+// const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
 
 const parseDomain = () => [
   0,
@@ -301,7 +301,15 @@ export default function BubbleChartPage() {
                   {ram_sunday.map((entry: any, index: number) => (
                     <Cell
                       key={`cell-${index}`}
-                      fill={COLORS[index % COLORS.length]}
+                      fill={
+                        entry.value < 30
+                          ? "gray"
+                          : entry.value < 50
+                          ? "#268AFF"
+                          : entry.value < 60
+                          ? "#268AFF"
+                          : "#36F097"
+                      }
                     />
                   ))}
                 </Scatter>
@@ -351,7 +359,15 @@ export default function BubbleChartPage() {
                   {ram_monday.map((entry: any, index: number) => (
                     <Cell
                       key={`cell-${index}`}
-                      fill={COLORS[index % COLORS.length]}
+                      fill={
+                        entry.value < 30
+                          ? "gray"
+                          : entry.value < 50
+                          ? "#268AFF"
+                          : entry.value < 60
+                          ? "#268AFF"
+                          : "#36F097"
+                      }
                     />
                   ))}
                 </Scatter>
@@ -401,7 +417,15 @@ export default function BubbleChartPage() {
                   {ram_tuesday.map((entry: any, index: number) => (
                     <Cell
                       key={`cell-${index}`}
-                      fill={COLORS[index % COLORS.length]}
+                      fill={
+                        entry.value < 30
+                          ? "gray"
+                          : entry.value < 50
+                          ? "#268AFF"
+                          : entry.value < 60
+                          ? "#268AFF"
+                          : "#36F097"
+                      }
                     />
                   ))}
                 </Scatter>
@@ -451,7 +475,15 @@ export default function BubbleChartPage() {
                   {ram_wednesday.map((entry: any, index: number) => (
                     <Cell
                       key={`cell-${index}`}
-                      fill={COLORS[index % COLORS.length]}
+                      fill={
+                        entry.value < 30
+                          ? "gray"
+                          : entry.value < 50
+                          ? "#268AFF"
+                          : entry.value < 60
+                          ? "#268AFF"
+                          : "#36F097"
+                      }
                     />
                   ))}
                 </Scatter>
@@ -501,7 +533,15 @@ export default function BubbleChartPage() {
                   {ram_thursday.map((entry: any, index: number) => (
                     <Cell
                       key={`cell-${index}`}
-                      fill={COLORS[index % COLORS.length]}
+                      fill={
+                        entry.value < 30
+                          ? "gray"
+                          : entry.value < 50
+                          ? "#268AFF"
+                          : entry.value < 60
+                          ? "#268AFF"
+                          : "#36F097"
+                      }
                     />
                   ))}
                 </Scatter>
@@ -551,7 +591,15 @@ export default function BubbleChartPage() {
                   {ram_friday.map((entry: any, index: number) => (
                     <Cell
                       key={`cell-${index}`}
-                      fill={COLORS[index % COLORS.length]}
+                      fill={
+                        entry.value < 30
+                          ? "gray"
+                          : entry.value < 50
+                          ? "#268AFF"
+                          : entry.value < 60
+                          ? "#268AFF"
+                          : "#36F097"
+                      }
                     />
                   ))}
                 </Scatter>
@@ -600,7 +648,15 @@ export default function BubbleChartPage() {
                   {ram_saturday.map((entry: any, index: number) => (
                     <Cell
                       key={`cell-${index}`}
-                      fill={COLORS[index % COLORS.length]}
+                      fill={
+                        entry.value < 30
+                          ? "gray"
+                          : entry.value < 50
+                          ? "#268AFF"
+                          : entry.value < 60
+                          ? "#268AFF"
+                          : "#36F097"
+                      }
                     />
                   ))}
                 </Scatter>
