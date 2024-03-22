@@ -78,6 +78,14 @@ export default function PieChartPage() {
               <Legend />
               <Tooltip />
             </PieChart>
+
+            {/* <PieChart width={730} height={250}>
+              <Pie data={data} cx="50%" cy="50%" outerRadius={80} label>
+                {data.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={colors[index]} />
+                ))}
+              </Pie>
+            </PieChart> */}
           </ResponsiveContainer>
         </div>
       </div>

@@ -19,23 +19,23 @@ import {
 const data = [
   {
     skill: "Python",
-    percentage: 90,
+    percentage: 76,
   },
   {
     skill: "Java",
-    percentage: 98,
+    percentage: 78,
   },
   {
     skill: "Django",
-    percentage: 86,
+    percentage: 56,
   },
   {
     skill: "PHP",
-    percentage: 99,
+    percentage: 59,
   },
   {
     skill: "HTML",
-    percentage: 25,
+    percentage: 75,
   },
   {
     skill: "CSS",
@@ -43,16 +43,12 @@ const data = [
   },
   {
     skill: "React",
-    percentage: 75,
+    percentage: 70,
   },
-  // {
-  //   skill: "abs",
-  //   percentage: 75,
-  // },
-  // {
-  //   skill: "abegss",
-  //   percentage: 75,
-  // },
+  {
+    skill: "Ok",
+    percentage: 70,
+  },
 ];
 
 export default function Page() {
@@ -98,16 +94,17 @@ export default function Page() {
               >
                 <PolarGrid />
                 <PolarAngleAxis dataKey="skill" />
-                {/* <PolarRadiusAxis /> */}
+                <PolarRadiusAxis opacity={0} domain={[0, 100]} />
                 <Radar
                   name="Ram"
                   dataKey="percentage"
-                  stroke="#6E29F7"
-                  fill="#6E29F7"
-                  fillOpacity={0.7}
+                  stroke="#28B5E1"
+                  strokeWidth={4}
+                  fill="#28B5E1"
+                  fillOpacity={0.4}
                 />
                 <Tooltip />
-                <Legend values="100%" />
+                {/* <Legend values="100%" /> */}
               </RadarChart>
             </ResponsiveContainer>
           )}

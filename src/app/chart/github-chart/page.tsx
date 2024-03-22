@@ -26,7 +26,7 @@ export default function GitChartPage() {
             <div className="mt-10 flex justify-center">
               <img
                 width="1050"
-                src={`https://ghchart.rshah.org/409ba5/${username}`}
+                src={`https://ghchart.rshah.org/${username}`}
                 alt="github chart"
               />
             </div>

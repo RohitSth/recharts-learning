@@ -13,6 +13,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  CartesianAxis,
 } from "recharts";
 
 const ramData = [
@@ -81,64 +82,103 @@ const ramData = [
 const LineChartComponent = () => {
   return (
     <>
-      <div className="flex justify-center mt-20">
-        <div className="flex min-h-48 flex-col items-center justify-center px-4 md:px-8 xl:px-10">
-          <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500">
+      <div className="flex flex-col justify-center mt-20">
+        <div className="flex min-h-48 flex-col mx-auto px-4 md:px-8 xl:px-10 bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500">
+          <div className="text-blue-300 ml-7">
+            Performance Data Of Ram of 2023
+          </div>
+          <div className="mt-10">
             <ResponsiveContainer width={650} height={450}>
               <LineChart data={ramData} margin={{ right: 30 }}>
-                <XAxis dataKey="name" />
-                <YAxis />
-                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" padding={{ left: 5, right: 20 }} />
+                <YAxis width={50} orientation="left" tickCount={5} />
+
+                <CartesianGrid vertical={false} strokeDasharray="6 6" />
 
                 <Tooltip
                   content={
                     <CustomTooltip active={false} payload={[]} label="" />
                   }
                 />
-                <Legend />
+                {/* <Legend /> */}
+                <Legend
+                  width={300}
+                  wrapperStyle={{
+                    top: -40,
+                    right: 0,
+                    backgroundColor: "rgba(0, 0, 0, 0.5)",
+                    borderRadius: 3,
+                  }}
+                />
 
                 <Line
                   type="monotone"
                   dataKey="currentPerformance"
-                  stroke="#3b82f6"
+                  stroke="#36F097"
                 />
                 <Line
                   type="monotone"
                   dataKey="expected"
-                  stroke="#8b5cf6"
-                  strokeDasharray="5 5"
+                  stroke="#268AFF"
+                  strokeDasharray="7 7"
                 />
               </LineChart>
             </ResponsiveContainer>
           </div>
         </div>
-        <div className="flex min-h-48 flex-col items-center justify-center px-4 md:px-8 xl:px-10">
-          <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500">
+        <div className="flex min-h-48 flex-col mx-auto px-4 md:px-8 xl:px-10 bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500 my-20">
+          <div className="text-blue-300 ml-7">
+            Performance Data Of Ram of 2023
+          </div>
+          <div className="mt-10">
             <ResponsiveContainer width={650} height={450}>
-              <AreaChart data={ramData} margin={{ right: 30 }}>
-                <XAxis dataKey="name" />
-                <YAxis />
-                <CartesianGrid strokeDasharray="3 3" />
+              <AreaChart
+                width={730}
+                height={250}
+                data={ramData}
+                margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+              >
+                <defs>
+                  <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#36F097" stopOpacity={0.8} />
+                    <stop offset="95%" stopColor="#36F097" stopOpacity={0} />
+                  </linearGradient>
+                  <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#268AFF" stopOpacity={0.8} />
+                    <stop offset="95%" stopColor="#268AFF" stopOpacity={0} />
+                  </linearGradient>
+                </defs>
 
+                <XAxis dataKey="name" padding={{ left: 5, right: 20 }} />
+                <YAxis />
+                <CartesianGrid vertical={false} strokeDasharray="6 6" />
                 <Tooltip
                   content={
                     <CustomTooltip active={false} payload={[]} label="" />
                   }
                 />
-                <Legend />
-
+                <Legend
+                  width={300}
+                  wrapperStyle={{
+                    top: -40,
+                    right: 0,
+                    backgroundColor: "rgba(0, 0, 0, 0.5)",
+                    borderRadius: 3,
+                  }}
+                />
                 <Area
                   type="monotone"
                   dataKey="expected"
-                  stroke="#ffffff"
-                  fill="#8a0cf0"
-                  strokeDasharray="8 8"
+                  stroke="#36F097"
+                  fillOpacity={1}
+                  fill="url(#colorUv)"
                 />
                 <Area
                   type="monotone"
                   dataKey="currentPerformance"
-                  stroke="#3b82f6"
-                  fill="#3b00f6"
+                  stroke="#208AFF"
+                  fillOpacity={1}
+                  fill="url(#colorPv)"
                 />
               </AreaChart>
             </ResponsiveContainer>
