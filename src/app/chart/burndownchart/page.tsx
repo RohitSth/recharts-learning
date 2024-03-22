@@ -14,45 +14,50 @@ import {
 const data = [
   {
     task: "A",
-    uv: 4000,
-    time: 2400,
+    completed: 4000,
+    expected: 0,
+    date: 8,
   },
   {
     task: "B",
     uv: 3000,
-    time: 1398,
+    date: 9,
   },
   {
     task: "C",
     uv: 2000,
-    time: 2800,
+    date: 10,
   },
   {
     task: "D",
     uv: 2780,
-    time: 3908,
+    date: 11,
   },
   {
     task: "E",
     uv: 1890,
-    time: 4800,
+    date: 12,
   },
   {
     task: "F",
     uv: 2390,
-    time: 3800,
+    date: 13,
   },
   {
     task: "G",
     uv: 3490,
-    time: 4300,
+    date: 14,
+  },
+  {
+    task: "H",
+    uv: 3490,
+    date: 14,
   },
 ];
 
 export default function App() {
   return (
     <LineChart
-      layout="vertical"
       width={500}
       height={300}
       data={data}
@@ -63,13 +68,13 @@ export default function App() {
         bottom: 5,
       }}
     >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis type="number" />
-      <YAxis dataKey="task" type="category" />
+      <CartesianGrid vertical={false} strokeDasharray="3 3" />
+      <XAxis type="number" dataKey="date" />
+      <YAxis domain={[0, data.length]} />
       <Tooltip />
       <Legend />
-      <Line dataKey="time" stroke="#8884d8" />
-      <Line dataKey="uv" stroke="#82ca9d" />
+      <Line dataKey="" stroke="#8884d8" />
+      {/* <Line dataKey="uv" stroke="#82ca9d" /> */}
     </LineChart>
   );
 }

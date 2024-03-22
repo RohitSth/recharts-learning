@@ -14,39 +14,33 @@ import {
 const data = [
   {
     subject: "Math",
-    A: 120,
-    B: 110,
-    fullMark: 150,
+    A: 80,
+    B: 40,
   },
   {
     subject: "Chinese",
-    A: 98,
-    B: 130,
-    fullMark: 150,
+    A: 55,
+    B: 62,
   },
   {
     subject: "English",
     A: 86,
-    B: 130,
-    fullMark: 150,
+    B: 50,
   },
   {
     subject: "Geography",
-    A: 99,
-    B: 100,
-    fullMark: 150,
+    A: 66,
+    B: 75,
   },
   {
     subject: "Physics",
     A: 85,
     B: 90,
-    fullMark: 150,
   },
   {
     subject: "History",
-    A: 65,
-    B: 85,
-    fullMark: 150,
+    A: 45,
+    B: 65,
   },
 ];
 
@@ -64,11 +58,11 @@ const CustomTooltip = ({
       <div className="p-4 bg-slate-900 flex flex-col gap-4 rounded-md">
         <p className="text-medium text-lg">{label}</p>
         <p className="text-sm text-blue-400">
-          currentPerformance:
+          Student A:
           <span className="ml-2">${payload[0].value}</span>
         </p>
         <p className="text-sm text-indigo-400">
-          expected:
+          Student B:
           <span className="ml-2">${payload[1].value}</span>
         </p>
       </div>
@@ -90,26 +84,38 @@ export default function RadarChartPage() {
             >
               <PolarGrid radialLines={true} gridType="polygon" />
               <PolarAngleAxis dataKey="subject" />
-              <PolarRadiusAxis angle={0} domain={[0, 150]} />
+              <PolarRadiusAxis domain={[0, 100]} opacity={0} />
               <Radar
-                name="Shyam"
+                name="Student A"
                 dataKey="A"
-                stroke="#8884d8"
-                fill="#8884d8"
-                fillOpacity={0.6}
+                stroke="#28B5E1"
+                strokeWidth={3}
+                fill="#28B5E1"
+                fillOpacity={0.4}
               />
               <Radar
-                name="Ram"
+                name="Student B"
                 dataKey="B"
-                stroke="#82ca9d"
-                fill="#82ca9d"
-                fillOpacity={0.6}
+                stroke="#5A3FFF"
+                strokeWidth={3}
+                fill="#D94DDC"
+                fillOpacity={0.3}
               />
               {/* <Tooltip /> */}
               <Tooltip
                 content={<CustomTooltip active={false} payload={[]} label="" />}
               />
-              <Legend />
+              {/* <Legend /> */}
+              <Legend
+                width={150}
+                wrapperStyle={{
+                  bottom: 0,
+                  right: -20,
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  // border: "1px solid #000FDC",
+                  borderRadius: 4,
+                }}
+              />
             </RadarChart>
           </ResponsiveContainer>
         </div>
