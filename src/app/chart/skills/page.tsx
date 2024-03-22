@@ -90,20 +90,19 @@ export default function Page() {
                   bottom: 5,
                 }}
               >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="skill" />
-                <YAxis />
+                <XAxis dataKey="skill" padding={{ left: 20, right: 20 }} />
+                <YAxis domain={[0, 100]} />
                 <Tooltip
                   content={
                     <CustomTooltip active={false} payload={[]} label="" />
                   }
                 />
-                <Legend />
+                <CartesianGrid vertical={false} strokeDasharray="6 6" />
                 <Bar
                   name="Ram"
                   dataKey="percentage"
                   fill="#6E29F7"
-                  activeBar={<Rectangle fill="#509BF5" stroke="blue" />}
+                  activeBar={<Rectangle fill="#268AFF" stroke="blue" />}
                 />
               </BarChart>
             </ResponsiveContainer>

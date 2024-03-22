@@ -9,7 +9,7 @@ const data_1 = [
   { name: "Versitility", value: 200 },
 ];
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#F080A0"];
+const COLORS = ["#3DFFDC", "#1ED6FF", "#268AFF", "#5A3FFF", "#1ED6FF"];
 
 const RADIAN = Math.PI / 180;
 
@@ -24,12 +24,13 @@ export default function DonutPage() {
                 data={data_1}
                 // cx={200}
                 // cy={200}
-                innerRadius={80}
+                innerRadius={100}
                 // label={true}
                 labelLine={false}
-                outerRadius={120}
-                paddingAngle={0}
-                fill="#8884d8"
+                outerRadius={126}
+                paddingAngle={3}
+                // fill="#8884d8"
+                stroke="none"
                 dataKey="value"
               >
                 {data_1.map((entry, index) => (
@@ -39,7 +40,17 @@ export default function DonutPage() {
                   />
                 ))}
               </Pie>
-              <Legend />
+              {/* <Legend /> */}
+              <Legend
+                width={150}
+                wrapperStyle={{
+                  bottom: 0,
+                  right: -20,
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  // border: "1px solid #000FDC",
+                  borderRadius: 4,
+                }}
+              />
             </PieChart>
           </ResponsiveContainer>
         </div>
