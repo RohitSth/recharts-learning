@@ -51,6 +51,27 @@ const data = [
   },
 ];
 
+const CustomTooltip = ({
+  active,
+  payload,
+  label,
+}: {
+  active: boolean;
+  payload: any[];
+  label: string;
+}) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="p-4 bg-slate-900 flex flex-col gap-4 rounded-md">
+        <p className="text-medium text-lg">{label}</p>
+        <p className="text-sm text-indigo-400">
+          <span className="ml-2">{payload[0].payload.percentage}</span>%
+        </p>
+      </div>
+    );
+  }
+};
+
 export default function Page() {
   return (
     <>
@@ -72,7 +93,11 @@ export default function Page() {
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="skill" />
                 <YAxis />
-                <Tooltip />
+                <Tooltip
+                  content={
+                    <CustomTooltip active={false} payload={[]} label="" />
+                  }
+                />
                 <Legend />
                 <Bar
                   name="Ram"
@@ -103,8 +128,13 @@ export default function Page() {
                   fill="#28B5E1"
                   fillOpacity={0.4}
                 />
-                <Tooltip />
+                {/* <Tooltip /> */}
                 {/* <Legend values="100%" /> */}
+                <Tooltip
+                  content={
+                    <CustomTooltip active={false} payload={[]} label="" />
+                  }
+                />
               </RadarChart>
             </ResponsiveContainer>
           )}

@@ -50,6 +50,32 @@ const data = [
   },
 ];
 
+const CustomTooltip = ({
+  active,
+  payload,
+  label,
+}: {
+  active: boolean;
+  payload: any[];
+  label: string;
+}) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="p-4 bg-slate-900 flex flex-col gap-4 rounded-md">
+        <p className="text-medium text-lg">{label}</p>
+        <p className="text-sm text-blue-400">
+          currentPerformance:
+          <span className="ml-2">${payload[0].value}</span>
+        </p>
+        <p className="text-sm text-indigo-400">
+          expected:
+          <span className="ml-2">${payload[1].value}</span>
+        </p>
+      </div>
+    );
+  }
+};
+
 export default function RadarChartPage() {
   return (
     <>
@@ -79,7 +105,10 @@ export default function RadarChartPage() {
                 fill="#82ca9d"
                 fillOpacity={0.6}
               />
-              <Tooltip />
+              {/* <Tooltip /> */}
+              <Tooltip
+                content={<CustomTooltip active={false} payload={[]} label="" />}
+              />
               <Legend />
             </RadarChart>
           </ResponsiveContainer>
