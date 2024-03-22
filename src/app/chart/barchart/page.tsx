@@ -13,46 +13,39 @@ import {
 
 const data = [
   {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
+    name: "Person A",
+    project_A: 40,
+    project_B: 24,
   },
   {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    name: "Person B",
+    project_A: 30,
+    project_B: 43,
   },
   {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
+    name: "Person C",
+    project_A: 20,
+    project_B: 80,
   },
   {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
+    name: "Person D",
+    project_A: 27,
+    project_B: 39,
   },
   {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
+    name: "Person E",
+    project_A: 18,
+    project_B: 48,
   },
   {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
+    name: "Person F",
+    project_A: 23,
+    project_B: 38,
   },
   {
-    name: "Page G",
-    uv: 3490,
-    pv: 4350,
-    amt: 2100,
+    name: "Person G",
+    project_A: 34,
+    project_B: 43,
   },
 ];
 
@@ -60,11 +53,10 @@ export default function BarChartPage() {
   return (
     <>
       <div className="flex min-h-48 flex-col items-center justify-center px-4 md:px-8 xl:px-10">
+        <p>Data of Project A and B</p>
         <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500">
-          <ResponsiveContainer width={600} height={450}>
+          <ResponsiveContainer width={800} height={600}>
             <BarChart
-              width={500}
-              height={300}
               data={data}
               margin={{
                 top: 5,
@@ -73,16 +65,25 @@ export default function BarChartPage() {
                 bottom: 5,
               }}
             >
-              <CartesianGrid strokeDasharray="5 5" />
-              <XAxis dataKey="name" />
-              <YAxis />
+              <CartesianGrid vertical={false} strokeDasharray="6 6" />
+              <XAxis dataKey="name" padding={{ left: 20, right: 20 }} />
+              <YAxis domain={[0, 100]} />
               <Tooltip
                 content={<CustomTooltip active={false} payload={[]} label="" />}
               />
-              <Legend />
+              {/* <Legend /> */}
+              <Legend
+                width={200}
+                wrapperStyle={{
+                  top: -40,
+                  right: -40,
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  borderRadius: 3,
+                }}
+              />
 
-              <Bar dataKey="pv" fill="#2563eb" />
-              <Bar dataKey="uv" fill="#8b5cf6" />
+              <Bar dataKey="project_A" fill="#8b5cf6" />
+              <Bar dataKey="project_B" fill="#2563eb" />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -105,12 +106,12 @@ const CustomTooltip = ({
       <div className="p-4 bg-slate-900 flex flex-col gap-4 rounded-md">
         <p className="text-medium text-lg">{label}</p>
         <p className="text-sm text-blue-400">
-          Revenue:
-          <span className="ml-2">${payload[0].value}</span>
+          PA
+          <span className="ml-2">{payload[0].value}%</span>
         </p>
         <p className="text-sm text-indigo-400">
-          Profit:
-          <span className="ml-2">${payload[1].value}</span>
+          PB
+          <span className="ml-2">{payload[1].value}%</span>
         </p>
       </div>
     );
