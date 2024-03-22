@@ -1,17 +1,14 @@
 "use client";
 import {
-  CartesianGrid,
   Cell,
   Legend,
   Pie,
   PieChart,
   ResponsiveContainer,
   Tooltip,
-  XAxis,
-  YAxis,
 } from "recharts";
 
-const data_1 = [
+const data = [
   { name: "Fighting", value: 400 },
   { name: "Farming", value: 300 },
   { name: "Pushing", value: 300 },
@@ -19,35 +16,59 @@ const data_1 = [
   { name: "Versitility", value: 200 },
 ];
 
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+const colors = ["#3DFFDC", "#1ED6FF", "#268AFF", "#1ED6FF", "#5A3FFF"];
 
 const RADIAN = Math.PI / 180;
 
-// const renderCustomizedLabel = ({
-//   cx,
-//   cy,
-//   midAngle,
-//   innerRadius,
-//   outerRadius,
-//   percent,
-//   index,
-// }: any) => {
-//   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-//   const x = cx + radius * Math.cos(-midAngle * RADIAN);
-//   const y = cy + radius * Math.sin(-midAngle * RADIAN);
+const renderCustomizedLabel = ({
+  cx,
+  cy,
+  midAngle,
+  innerRadius,
+  outerRadius,
+  percent,
+  index,
+}: any) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
-//   return (
-//     <text
-//       x={x}
-//       y={y}
-//       fill="white"
-//       textAnchor={x > cx ? "start" : "end"}
-//       dominantBaseline="central"
-//     >
-//       {`${(percent * 100).toFixed(0)}%`}
-//     </text>
-//   );
-// };
+  return (
+    <text
+      x={x}
+      y={y}
+      fill="white"
+      textAnchor={x > cx ? "start" : "end"}
+      dominantBaseline="central"
+    >
+      {`${(percent * 100).toFixed(0)}%`}
+    </text>
+  );
+};
+
+const CustomTooltip = ({
+  active,
+  payload,
+  label,
+}: {
+  active: boolean;
+  payload: any[];
+  label: string;
+}) => {
+  if (active && payload && payload.length) {
+    const total = data.reduce((acc, entry) => acc + entry.value, 0);
+    const percentage = ((payload[0].payload.value / total) * 100).toFixed(2);
+
+    return (
+      <div className="p-4 bg-slate-900 flex flex-col gap-4 rounded-md">
+        <p className="text-medium text-lg">{label}</p>
+        <p className="text-sm text-indigo-400">
+          <span className="ml-2">{percentage}%</span>
+        </p>
+      </div>
+    );
+  }
+};
 
 export default function PieChartPage() {
   return (
@@ -57,35 +78,31 @@ export default function PieChartPage() {
           <ResponsiveContainer width={600} height={450}>
             <PieChart width={800} height={400}>
               <Pie
-                data={data_1}
-                // cx={200}
-                // cy={200}
-                innerRadius={0}
-                label={true}
+                data={data}
+                dataKey="value" // Add the dataKey property with a valid value
                 // label={renderCustomizedLabel}
-                labelLine={false}
                 outerRadius={120}
-                fill="#8884d8"
-                dataKey="value"
               >
-                {data_1.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={COLORS[index % COLORS.length]}
-                  />
-                ))}
-              </Pie>
-              <Legend />
-              <Tooltip />
-            </PieChart>
-
-            {/* <PieChart width={730} height={250}>
-              <Pie data={data} cx="50%" cy="50%" outerRadius={80} label>
                 {data.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={colors[index]} />
                 ))}
               </Pie>
-            </PieChart> */}
+              {/* <Legend /> */}
+              <Legend
+                width={150}
+                wrapperStyle={{
+                  top: 0,
+                  right: -20,
+                  backgroundColor: "rgba(0, 0, 0, 0.5)",
+                  // border: "1px solid #000FDC",
+                  borderRadius: 4,
+                }}
+              />
+              {/* <Tooltip /> */}
+              <Tooltip
+                content={<CustomTooltip active={false} payload={[]} label="" />}
+              />
+            </PieChart>
           </ResponsiveContainer>
         </div>
       </div>

@@ -47,6 +47,9 @@ const Header = () => {
           <Link className="mr-5 hover:text-blue-400" href="/chart/github-chart">
             GitHub Chart
           </Link>
+          <Link className="mr-5 hover:text-blue-400" href="/chart/piechart">
+            Pie Chart
+          </Link>
         </nav>
       </div>
     </header>
