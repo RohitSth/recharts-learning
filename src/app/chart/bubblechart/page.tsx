@@ -248,13 +248,35 @@ const renderTooltip = (props: any) => {
   return null;
 };
 
+const Legend = () => (
+  <div className="flex justify-end space-x-4 mt-4">
+    <div className="flex items-center">
+      <div className="w-4 h-4 bg-[gray] mr-2 rounded-xl"></div>
+      <span>ClockOut</span>
+    </div>
+    <div className="flex items-center">
+      <div className="w-4 h-4 bg-[#268AFF] mr-2 rounded-xl"></div>
+      <span>ClockIn</span>
+    </div>
+
+    <div className="flex items-center">
+      <div className="w-4 h-4 bg-[#36F097] mr-2 rounded-xl"></div>
+      <span>SetTimer</span>
+    </div>
+  </div>
+);
+
 export default function BubbleChartPage() {
   const domain = parseDomain();
   const range = [16, 225];
   return (
     <>
       <div className="flex min-h-48 flex-col items-center justify-center px-4 md:px-8 xl:px-10">
-        <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500">
+        <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex flex-col justify-center p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500">
+          <div className="mb-16">
+            <p className="text-blue-300"> Login Data Of Ram of a week </p>
+            <Legend />
+          </div>
           <ResponsiveContainer>
             <div>
               <ScatterChart
