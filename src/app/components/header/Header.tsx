@@ -8,46 +8,75 @@ const Header = () => {
           href="/"
           className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
         >
-          <span className="text-white text-xl hover:text-blue-400">Home</span>
+          <span className="text-white text-xl hover:text-blue-400 relative inline cursor-pointer font-medium before:bg-blue-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100">
+            Home
+          </span>
         </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <Link className="mr-5 hover:text-blue-400" href="/chart/barchart">
+          <Link
+            className="mr-5 text-white hover:text-blue-400 relative inline cursor-pointer font-medium before:bg-blue-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
+            href="/chart/barchart"
+          >
             Bar Chart
           </Link>
           {/* <Link className="mr-5 hover:text-blue-400" href="/chart/piechart">
             Pie Chart
           </Link> */}
-          <Link className="mr-5 hover:text-blue-400" href="/chart/radarchart">
+          <Link
+            className="mr-5 text-white hover:text-blue-400 relative inline cursor-pointer font-medium before:bg-blue-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
+            href="/chart/radarchart"
+          >
             Radar Chart
           </Link>
-          <Link className="mr-5 hover:text-blue-400" href="/chart/donut">
+          <Link
+            className="mr-5 text-white hover:text-blue-400 relative inline cursor-pointer font-medium before:bg-blue-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
+            href="/chart/donut"
+          >
             Donut Chart
           </Link>
           {/* <Link className="mr-5 hover:text-blue-400" href="/chart/dotlinechart">
             Dot Line Chart
           </Link> */}
-          <Link className="mr-5 hover:text-blue-400" href="/chart/skills">
+          <Link
+            className="mr-5 text-white hover:text-blue-400 relative inline cursor-pointer font-medium before:bg-blue-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
+            href="/chart/skills"
+          >
             Skills Chart
           </Link>
-          <Link className="mr-5 hover:text-blue-400" href="/chart/bubblechart">
+          <Link
+            className="mr-5 text-white hover:text-blue-400 relative inline cursor-pointer font-medium before:bg-blue-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
+            href="/chart/bubblechart"
+          >
             Bubble Chart
           </Link>
-          <Link className="mr-5 hover:text-blue-400" href="/chart/linechart">
+          <Link
+            className="mr-5 text-white hover:text-blue-400 relative inline cursor-pointer font-medium before:bg-blue-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
+            href="/chart/linechart"
+          >
             Line Chart
           </Link>
-          <Link className="mr-5 hover:text-blue-400" href="/chart/gaugechart">
+          <Link
+            className="mr-5 text-white hover:text-blue-400 relative inline cursor-pointer font-medium before:bg-blue-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
+            href="/chart/gaugechart"
+          >
             Gauge Chart
           </Link>
           <Link
-            className="mr-5 hover:text-blue-400"
+            className="mr-5 htext-white hover:text-blue-400 relative inline cursor-pointer font-medium before:bg-blue-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
             href="/chart/testing-gauge"
           >
             TestGauge Chart
           </Link>
-          <Link className="mr-5 hover:text-blue-400" href="/chart/github-chart">
+          <Link
+            className="mr-5 text-white hover:text-blue-400 relative inline cursor-pointer font-medium before:bg-blue-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
+            href="/chart/github-chart"
+          >
             GitHub Chart
           </Link>
-          <Link className="mr-5 hover:text-blue-400" href="/chart/piechart">
+          <Link
+            className="mr-5 text-white hover:text-blue-400 relative inline cursor-pointer font-medium before:bg-blue-600  before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
+            href="/chart/piechart"
+          >
             Pie Chart
           </Link>
         </nav>
