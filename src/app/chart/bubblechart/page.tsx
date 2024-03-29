@@ -40,6 +40,7 @@ const ram_sunday = [
   { hour: "9p", index: 1, value: clockOut },
   { hour: "10p", index: 1, value: clockOut },
   { hour: "11p", index: 1, value: clockOut },
+  { hour: "11p", index: 1, value: clockOut },
 ];
 
 const ram_monday = [

@@ -100,7 +100,7 @@ export default function PieChartPage() {
               />
               {/* <Tooltip /> */}
               <Tooltip
-                content={<CustomTooltip active={false} payload={[]} label="" />}
+                content={<CustomTooltip active={true} payload={[]} label="" />}
               />
             </PieChart>
           </ResponsiveContainer>

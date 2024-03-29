@@ -50,6 +50,9 @@ const Header = () => {
           <Link className="mr-5 hover:text-blue-400" href="/chart/piechart">
             Pie Chart
           </Link>
+          <Link className="mr-5 hover:text-blue-400" href="/chart/scatterchart">
+            ScatterChart
+          </Link>
         </nav>
       </div>
     </header>

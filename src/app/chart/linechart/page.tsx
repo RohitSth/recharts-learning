@@ -97,7 +97,7 @@ const LineChartComponent = () => {
 
                 <Tooltip
                   content={
-                    <CustomTooltip active={false} payload={[]} label="" />
+                    <CustomTooltip active={true} payload={[]} label="" />
                   }
                 />
                 {/* <Legend /> */}
@@ -154,7 +154,7 @@ const LineChartComponent = () => {
                 <CartesianGrid vertical={false} strokeDasharray="6 6" />
                 <Tooltip
                   content={
-                    <CustomTooltip active={false} payload={[]} label="" />
+                    <CustomTooltip active={true} payload={[]} label="" />
                   }
                 />
                 <Legend
