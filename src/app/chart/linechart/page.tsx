@@ -1,7 +1,5 @@
 "use client";
 
-import { useState, useCallback } from "react";
-
 import {
   LineChart,
   AreaChart,
@@ -83,6 +81,7 @@ const LineChartComponent = () => {
   return (
     <>
       <div className="flex flex-col justify-center mt-20">
+        {/* For Line chart */}
         <div className="flex min-h-48 flex-col mx-auto px-4 md:px-8 xl:px-10 bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500">
           <div className="text-blue-300 ml-7">
             Performance Data Of Ram of 2023
@@ -126,6 +125,8 @@ const LineChartComponent = () => {
             </ResponsiveContainer>
           </div>
         </div>
+
+        {/* For area chart */}
         <div className="flex min-h-48 flex-col mx-auto px-4 md:px-8 xl:px-10 bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500 my-20">
           <div className="text-blue-300 ml-7">
             Performance Data Of Ram of 2023
@@ -189,6 +190,7 @@ const LineChartComponent = () => {
   );
 };
 
+// Custom tooltip component
 const CustomTooltip = ({
   active,
   payload,

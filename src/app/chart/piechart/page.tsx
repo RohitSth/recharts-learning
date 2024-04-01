@@ -8,6 +8,7 @@ import {
   Tooltip,
 } from "recharts";
 
+// Static Data for the pie chart
 const data = [
   { name: "Fighting", value: 400 },
   { name: "Farming", value: 300 },
@@ -16,10 +17,13 @@ const data = [
   { name: "Versitility", value: 200 },
 ];
 
+// Colors for the pie chart segments/cells
 const colors = ["#3DFFDC", "#1ED6FF", "#268AFF", "#1ED6FF", "#5A3FFF"];
 
+// Constant for converting degrees to radians
 const RADIAN = Math.PI / 180;
 
+// Custom label component for the pie chart
 const renderCustomizedLabel = ({
   cx,
   cy,
@@ -46,6 +50,7 @@ const renderCustomizedLabel = ({
   );
 };
 
+// Custom tooltip component
 const CustomTooltip = ({
   active,
   payload,
@@ -83,6 +88,7 @@ export default function PieChartPage() {
                 // label={renderCustomizedLabel}
                 outerRadius={120}
               >
+                {/* Customizing the colors of each segment */}
                 {data.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={colors[index]} />
                 ))}

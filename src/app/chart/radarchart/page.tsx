@@ -11,6 +11,7 @@ import {
   Legend,
 } from "recharts";
 
+// Data for the radar chart
 const data = [
   {
     subject: "Math",
@@ -44,6 +45,7 @@ const data = [
   },
 ];
 
+// Custom tooltip component
 const CustomTooltip = ({
   active,
   payload,
@@ -73,6 +75,7 @@ const CustomTooltip = ({
 export default function RadarChartPage() {
   return (
     <>
+      {/* Main content */}
       <div className="flex min-h-48 flex-col items-center justify-center px-4 md:px-8 xl:px-10">
         <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500">
           <ResponsiveContainer width={600} height={450}>
@@ -82,8 +85,12 @@ export default function RadarChartPage() {
               outerRadius={180}
               data={data}
             >
+              {/* Grid of the radar chart | polygon or circle */}
               <PolarGrid radialLines={true} gridType="polygon" />
+
+              {/* Angle axis for the radar chart where the data to show is subject */}
               <PolarAngleAxis dataKey="subject" />
+              {/* Domain set 0-100 as highest marks will be 100*/}
               <PolarRadiusAxis domain={[0, 100]} opacity={0} />
               <Radar
                 name="Student A"

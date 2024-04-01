@@ -1,6 +1,7 @@
 "use client";
 import { Cell, Legend, Pie, PieChart, ResponsiveContainer } from "recharts";
 
+// Static Data for the pie chart
 const data_1 = [
   { name: "Fighting", value: 400 },
   { name: "Farming", value: 300 },
@@ -9,15 +10,17 @@ const data_1 = [
   { name: "Versitility", value: 200 },
 ];
 
+// Colors for the pie chart segments/cells
 const COLORS = ["#3DFFDC", "#1ED6FF", "#268AFF", "#5A3FFF", "#1ED6FF"];
-
-const RADIAN = Math.PI / 180;
 
 export default function DonutPage() {
   return (
     <>
+      {/* Main content */}
       <div className="flex min-h-48 flex-col items-center justify-center px-4 md:px-8 xl:px-10">
+        {/* Card container */}
         <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500">
+          {/* Responsive container for the chart */}
           <ResponsiveContainer width={600} height={450}>
             <PieChart width={800} height={400}>
               <Pie
@@ -33,6 +36,7 @@ export default function DonutPage() {
                 stroke="none"
                 dataKey="value"
               >
+                {/* Customizing the colors of each segment */}
                 {data_1.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
@@ -40,7 +44,7 @@ export default function DonutPage() {
                   />
                 ))}
               </Pie>
-              {/* <Legend /> */}
+              {/* Legend component */}
               <Legend
                 width={150}
                 wrapperStyle={{

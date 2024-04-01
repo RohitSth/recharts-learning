@@ -15,6 +15,7 @@ const clockOut = 0;
 const startTimer = 100;
 const stopTimer = 50;
 
+// Static data of ram from Sunday to Saturday
 const ram_sunday = [
   { hour: "12a", index: 1, value: clockOut }, // x = 12a, y = 1, z = 70
   { hour: "1a", index: 1, value: clockOut },
@@ -204,9 +205,8 @@ const ram_saturday = [
   { hour: "11p", index: 1, value: clockOut },
 ];
 
-// const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
-
 const parseDomain = () => [
+  // Don't know what this function does | copied from the examples in the docs
   0,
   Math.max(
     Math.max.apply(
@@ -220,6 +220,7 @@ const parseDomain = () => [
   ),
 ];
 
+// Custom tooltip for the scatter chart
 const renderTooltip = (props: any) => {
   const { active, payload } = props;
 
@@ -248,6 +249,7 @@ const renderTooltip = (props: any) => {
   return null;
 };
 
+// Custom Legend component
 const Legend = () => (
   <div className="flex justify-end space-x-4 mt-4">
     <div className="flex items-center">
@@ -266,19 +268,23 @@ const Legend = () => (
   </div>
 );
 
+// Main component
 export default function BubbleChartPage() {
   const domain = parseDomain();
   const range = [16, 225];
   return (
     <>
+      {/* Main content */}
       <div className="flex min-h-48 flex-col items-center justify-center px-4 md:px-8 xl:px-10">
         <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex flex-col justify-center p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500">
           <div className="mb-16">
             <p className="text-blue-300"> Login Data Of Ram of a week </p>
             <Legend />
           </div>
+
           <ResponsiveContainer>
             <div>
+              {/* Chart for Sunday */}
               <ScatterChart
                 width={1000}
                 height={60}
@@ -337,6 +343,7 @@ export default function BubbleChartPage() {
                 </Scatter>
               </ScatterChart>
 
+              {/* Chart for Monday */}
               <ScatterChart
                 width={1000}
                 height={60}
@@ -395,6 +402,7 @@ export default function BubbleChartPage() {
                 </Scatter>
               </ScatterChart>
 
+              {/* Chart for Tuesday */}
               <ScatterChart
                 width={1000}
                 height={60}
@@ -453,6 +461,7 @@ export default function BubbleChartPage() {
                 </Scatter>
               </ScatterChart>
 
+              {/* Chart for Wednesday */}
               <ScatterChart
                 width={1000}
                 height={60}
@@ -511,6 +520,7 @@ export default function BubbleChartPage() {
                 </Scatter>
               </ScatterChart>
 
+              {/* Chart for Thursday */}
               <ScatterChart
                 width={1000}
                 height={60}
@@ -569,6 +579,7 @@ export default function BubbleChartPage() {
                 </Scatter>
               </ScatterChart>
 
+              {/* Chart for Friday */}
               <ScatterChart
                 width={1000}
                 height={60}
@@ -627,6 +638,7 @@ export default function BubbleChartPage() {
                 </Scatter>
               </ScatterChart>
 
+              {/* Chart for Saturday */}
               <ScatterChart
                 width={1000}
                 height={60}

@@ -11,6 +11,7 @@ import {
   Legend,
 } from "recharts";
 
+// Data for the bar chart
 const data = [
   {
     name: "Person A",
@@ -52,9 +53,13 @@ const data = [
 export default function BarChartPage() {
   return (
     <>
+      {/* Main content */}
       <div className="flex min-h-48 flex-col items-center justify-center px-4 md:px-8 xl:px-10">
+        {/* Description */}
         <p>Data of Project A and B</p>
+        {/* Card container */}
         <div className=" bg-black rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-slate-800 flex justify-center p-11 hover:bg-opacity-25 shadow-xl shadow-blue-700 hover:shadow-blue-500">
+          {/* Responsive container for the chart */}
           <ResponsiveContainer width={800} height={600}>
             <BarChart
               data={data}
@@ -81,8 +86,9 @@ export default function BarChartPage() {
                   borderRadius: 3,
                 }}
               />
-
+              {/* Bar for project A */}
               <Bar dataKey="project_A" fill="#8b5cf6" />
+              {/* Bar for project B */}
               <Bar dataKey="project_B" fill="#2563eb" />
             </BarChart>
           </ResponsiveContainer>
