@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { useDebouncedCallback } from "use-debounce";
 
 export default function GitChartPage() {
@@ -9,8 +10,25 @@ export default function GitChartPage() {
     return "";
   });
 
+  const [repositories, setRepositories] = useState([]);
+
+  useEffect(() => {
+    const fetchRepositories = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.github.com/users/${username}/repos`
+        );
+        setRepositories(response.data);
+      } catch (error) {
+        console.error("Error fetching repositories:", error);
+      }
+    };
+
+    fetchRepositories();
+  }, [username]);
+
   // Debounced callback function for handling input changes
-  const handleChange = useDebouncedCallback((e: any) => {
+  const handleChange = useDebouncedCallback((e) => {
     setUsername(e.target.value);
   }, 400); // Debounce delay of 400ms
 
@@ -37,6 +55,13 @@ export default function GitChartPage() {
               />
             </div>
           )}
+          <ul>
+            {repositories.map((repo) => (
+              <li key={repo.id}>
+                <a href={repo.html_url}>{repo.name}</a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </>
